@@ -1,0 +1,153 @@
+[
+  {
+    "registration": "WD05ROW",
+    "added_at": "2026-09-19T15:38:42.554482+00:00",
+    "vehicle": {
+      "registration": "WD05ROW",
+      "make": "ALFA ROMEO",
+      "model": "MITO",
+      "vehicleType": "car",
+      "colour": "BLUE",
+      "fuelType": "petrol",
+      "engineCapacityCc": 1368,
+      "yearOfManufacture": 2011,
+      "monthOfFirstRegistration": "2011-04",
+      "vehicleAgeYears": 15.7,
+      "summary": {
+        "buyRecommendation": "consider",
+        "vehicleRiskLevel": "medium",
+        "motRiskLevel": "low",
+        "conditionBand": "fair",
+        "maintenanceBand": "poor",
+        "mileageAnomalyRisk": "none",
+        "colourChangeIndicated": false,
+        "aboveAverageAdvisories": true,
+        "motFailureDetailAvailable": true
+      },
+      "signals": {
+        "co2EmissionsGPerKm": 138,
+        "euroEmissionStandard": "EURO 5",
+        "ulezCompliant": true,
+        "markedForExport": false,
+        "hasOutstandingRecall": null,
+        "v5cLastIssued": "2024-06-10",
+        "taxStatus": "taxed",
+        "taxDueDate": "2027-05-01",
+        "taxDaysRemaining": 224,
+        "vedBand": "E",
+        "vedAnnualCostGbp": 190,
+        "motStatus": "valid",
+        "motExpiryDate": "2027-05-06",
+        "motDaysRemaining": 229,
+        "imminentMot": false,
+        "odometerTrend": "consistent",
+        "latestOdometerMiles": 99393,
+        "typicalAnnualMileageMiles": 6224,
+        "odometerVsFleetAverage": "average",
+        "motPassRate": 0.7647059,
+        "totalMotTests": 17,
+        "totalMotFailures": 4,
+        "totalAdvisoryCount": 59,
+        "totalFailureItemCount": 20,
+        "latestAdvisoryCount": 7,
+        "latestFailureItemCount": 0,
+        "dangerousDefectEver": true,
+        "highFailureHistory": false,
+        "advisoryTrend": "increasing",
+        "advisoryMomentum": "worsening",
+        "daysSinceLastFailure": 137,
+        "failuresLast24Months": 2,
+        "advisoriesLast3Tests": 22,
+        "trendWindowTests": 5,
+        "firstMotDate": "2014-04-02",
+        "lastMotDate": "2026-05-07",
+        "lastMotResult": "passed",
+        "firstMotDue": null,
+        "failureClusters": [
+          "brakes",
+          "suspension",
+          "tyres",
+          "lights",
+          "bodywork",
+          "exhaust",
+          "electrical",
+          "wipers"
+        ],
+        "repeatFailureCount": 3,
+        "advisoryClusters": [
+          "brakes",
+          "suspension",
+          "tyres",
+          "lights",
+          "steering",
+          "bodywork",
+          "exhaust"
+        ],
+        "ncapSafetyRating": null,
+        "drivetrainStressProfile": {
+          "likelyDrivingPattern": "mixed",
+          "dpfRisk": null
+        }
+      },
+      "scores": {
+        "motRiskScore": 0.31,
+        "conditionScore": 0.57,
+        "conditionPercentile": 52,
+        "maintenanceScore": 0,
+        "maintenancePercentile": 2,
+        "failureRateRatio": 3.2,
+        "advisoryRateRatio": 2.09,
+        "benchmarkSampleSize": 3658,
+        "avgAdvisoriesPerTestForMMY": 1.6632303,
+        "avgFailuresPerTestForMMY": 0.36807314,
+        "offRoadLikelihoodScore": 0.05,
+        "scoreConvention": "0_to_1; higher_is_better except motRiskScore and offRoadLikelihoodScore"
+      },
+      "fleetFailureProfile": {
+        "mileageBand": "80k\u2013100k",
+        "sampleSize": 15938,
+        "topFailures": [
+          {
+            "category": "lights",
+            "rate": 0.107416235
+          },
+          {
+            "category": "suspension",
+            "rate": 0.091981426
+          },
+          {
+            "category": "tyres",
+            "rate": 0.08357385
+          }
+        ]
+      },
+      "fleetAdvisoryProfile": {
+        "mileageBand": "80k\u2013100k",
+        "sampleSize": 15938,
+        "topAdvisories": [
+          {
+            "category": "tyres",
+            "rate": 0.34351864
+          },
+          {
+            "category": "lights",
+            "rate": 0.3090099
+          },
+          {
+            "category": "brakes",
+            "rate": 0.3050571
+          }
+        ]
+      },
+      "sources": {
+        "motHistory": "DVSA MOT History API",
+        "mutableData": "DVLA Vehicle Enquiry Service (VES)",
+        "safetyRating": null
+      },
+      "schemaVersion": "1.0",
+      "enrichmentPending": false,
+      "dataAsOf": "2026-09-19T15:38:53.270425+00:00",
+      "checkedAt": "2026-09-19T15:38:53.8456727+00:00"
+    }
+  }
+]

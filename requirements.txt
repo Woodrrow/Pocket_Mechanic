@@ -2,3 +2,5 @@ fastapi
 uvicorn
 redis
 types-redis
+httpx
+python-dotenv
