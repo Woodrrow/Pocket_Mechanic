@@ -10,3 +10,4 @@ __pycache__/
 
 # Editors
 .vscode/
+MOT_HISTORY/item_detail.csv

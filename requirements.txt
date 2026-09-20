@@ -4,3 +4,4 @@ redis
 types-redis
 httpx
 python-dotenv
+duckdb

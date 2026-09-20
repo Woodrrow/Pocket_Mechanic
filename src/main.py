@@ -30,12 +30,12 @@ def create_car(car_name: str, year: int):
         cars[car_id] = car_payload
         return {"message": "Car created successfully", "car": car_payload}
 
-
+'''
 # Route to get cars (get_cars)
 @app.get("/cars")
 def get_cars():
     return {"cars": list(cars.values())}
-
+'''
 
 # Route to add a car to the garage by registration, via the Zyfy Vehicle API (add_car_to_garage)
 @app.post("/garage/{registration}")
