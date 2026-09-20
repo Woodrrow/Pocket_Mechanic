@@ -86,6 +86,10 @@ Recognised trait keys: `epb`, `rear_brake_type`, `rear_piston_type`,
 
 Spec keys come from the `specs` block of each guide in `Data/guides/`.
 
+Before populating either file, read
+[`docs/REQUIREMENTS.md`](docs/REQUIREMENTS.md) — it carries the acceptance
+criteria for sourcing this data and two lessons from the first attempt.
+
 ### Endpoints
 
 | Method | Path | Purpose |
