@@ -1,0 +1,176 @@
+{
+  "id": "brake-pads",
+  "title": "Replace brake pads",
+  "category": "brakes",
+  "mot_clusters": [
+    "brakes"
+  ],
+  "summary": "Swap worn friction pads on one axle. Always do both sides of an axle together.",
+  "difficulty": "intermediate",
+  "estimated_minutes": 90,
+  "interval": "Inspect at every service. Replace once friction material is below 3 mm, or sooner if worn unevenly.",
+  "options": [
+    {
+      "key": "axle",
+      "label": "Which axle?",
+      "values": [
+        "front",
+        "rear"
+      ],
+      "note": "Rear calipers vary far more than fronts. Tell us the axle for accurate steps."
+    }
+  ],
+  "safety": [
+    "Never work under a car supported only by a jack. Use axle stands on a hard, level surface.",
+    "Brake dust may contain irritants. Do not blow it off with an airline; wipe it with brake cleaner and a rag.",
+    "Brakes are safety-critical. If anything does not go back exactly as it came off, stop and get it checked before driving."
+  ],
+  "tools": [
+    {
+      "name": "Trolley jack",
+      "essential": true
+    },
+    {
+      "name": "Axle stands (pair)",
+      "essential": true
+    },
+    {
+      "name": "Wheel chocks",
+      "essential": true
+    },
+    {
+      "name": "Socket set and breaker bar",
+      "essential": true
+    },
+    {
+      "name": "Torque wrench",
+      "essential": true,
+      "note": "Guessing caliper and wheel torque is how wheels come off."
+    },
+    {
+      "name": "Piston compression tool or large G-clamp",
+      "essential": true
+    },
+    {
+      "name": "Wire brush",
+      "essential": false
+    },
+    {
+      "name": "Brake cleaner",
+      "essential": false
+    },
+    {
+      "name": "Copper or ceramic brake grease",
+      "essential": false,
+      "note": "For slide pins and pad backing plates only. Never on the friction surface."
+    }
+  ],
+  "parts": [
+    {
+      "name": "Brake pad set (axle set, 4 pads)",
+      "spec_key": "pad_part_number"
+    },
+    {
+      "name": "Sump-safe brake cleaner",
+      "optional": true
+    }
+  ],
+  "specs": [
+    {
+      "key": "pad_part_number",
+      "label": "Pad set part number",
+      "unit": null
+    },
+    {
+      "key": "min_pad_thickness_mm",
+      "label": "Minimum friction material",
+      "unit": "mm"
+    },
+    {
+      "key": "caliper_slider_bolt_torque_nm",
+      "label": "Caliper slider bolt torque",
+      "unit": "Nm"
+    },
+    {
+      "key": "caliper_bracket_bolt_torque_nm",
+      "label": "Caliper bracket bolt torque",
+      "unit": "Nm"
+    },
+    {
+      "key": "wheel_nut_torque_nm",
+      "label": "Wheel nut/bolt torque",
+      "unit": "Nm"
+    }
+  ],
+  "steps": [
+    {
+      "id": "prep",
+      "title": "Park and secure the car",
+      "detail": "Level, solid ground. Engine off, in gear (or P), handbrake on. Chock the wheels on the axle you are NOT lifting."
+    },
+    {
+      "id": "loosen",
+      "title": "Crack the wheel nuts while it is on the ground",
+      "detail": "Quarter-turn each, no more. Doing this in the air just spins the wheel."
+    },
+    {
+      "id": "lift",
+      "title": "Jack up and support on axle stands",
+      "detail": "Use the manufacturer's jacking points. Lower the car onto the stands and give it a firm shove before you go near it.",
+      "warning": "A jack is a lifting device, not a supporting device."
+    },
+    {
+      "id": "wheel-off",
+      "title": "Remove the wheel and inspect",
+      "detail": "Check pad thickness, disc surface, and look for split flexi hoses or leaking caliper seals. A lipped or scored disc means discs as well as pads."
+    },
+    {
+      "id": "caliper-off",
+      "title": "Unbolt the caliper",
+      "detail": "Undo the slider bolts and swing or lift the caliper clear of the disc.",
+      "warning": "Support the caliper on an axle stand or hang it with wire. Letting it dangle on the brake hose damages the hose internally."
+    },
+    {
+      "id": "pads-out",
+      "title": "Remove the old pads",
+      "detail": "Note the orientation, any anti-rattle shims, and whether a wear sensor is clipped into the inner pad. Photograph it before it all comes apart."
+    },
+    {
+      "id": "clean",
+      "title": "Clean and grease the carrier",
+      "detail": "Wire-brush rust off the pad abutment surfaces so the new pads slide freely. Thin smear of brake grease on the slide pins and the pad backing plates."
+    },
+    {
+      "id": "retract",
+      "title": "Retract the piston",
+      "detail": "Push the piston squarely back into the caliper with a piston tool or G-clamp against an old pad.",
+      "warning": "Fluid is pushed back up to the reservoir. Check the reservoir does not overflow, and never reuse fluid that has been pushed back if it is dirty."
+    },
+    {
+      "id": "pads-in",
+      "title": "Fit the new pads and refit the caliper",
+      "detail": "New shims and clips if supplied. Refit the caliper and torque the bolts to spec — many are single-use and must be replaced."
+    },
+    {
+      "id": "wheel-on",
+      "title": "Refit the wheel and lower the car",
+      "detail": "Nuts finger-tight, lower onto the ground, then torque in a star pattern to spec."
+    },
+    {
+      "id": "pump",
+      "title": "Pump the brake pedal before you move",
+      "detail": "Press the pedal repeatedly until it goes hard. This pushes the pistons back out to the discs.",
+      "warning": "Skip this and your first press of the pedal at the end of the driveway will go to the floor with no braking at all."
+    },
+    {
+      "id": "fluid",
+      "title": "Check the fluid level",
+      "detail": "Top up to MAX with the correct DOT specification if needed. Brake fluid strips paint — wipe spills immediately."
+    },
+    {
+      "id": "bed-in",
+      "title": "Bed the pads in",
+      "detail": "Around ten moderate stops from 30 mph with cooling time between, then avoid hard braking for the first 200 miles. Expect a little smell and dust at first."
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "_comment": "Engineering traits a guide's rules key off. Anything not listed here resolves to \"unknown\", never to a guess — a wrong 'false' on epb is a broken caliper. Matching is make + model + year range, most specific match wins, and a match with no model applies to the whole make.",
+  "traits": [
+    {
+      "make": "Volkswagen",
+      "models": ["Golf", "Passat", "Tiguan", "Touran", "Arteon"],
+      "year_from": 2013,
+      "set": { "epb": true, "rear_brake_type": "disc", "start_stop": true, "bms_registration": true, "has_dipstick": true }
+    },
+    {
+      "make": "Volkswagen",
+      "models": ["Polo", "Up"],
+      "year_from": 2010,
+      "set": { "epb": false, "rear_brake_type": "drum", "start_stop": true, "bms_registration": true }
+    },
+    {
+      "make": "Audi",
+      "models": ["A3", "A4", "A5", "A6", "Q3", "Q5"],
+      "year_from": 2012,
+      "set": { "epb": true, "rear_brake_type": "disc", "start_stop": true, "bms_registration": true }
+    },
+    {
+      "make": "BMW",
+      "year_from": 2008,
+      "set": { "start_stop": true, "bms_registration": true, "rear_brake_type": "disc", "wear_sensor": true, "battery_location": "boot" }
+    },
+    {
+      "make": "Mercedes-Benz",
+      "year_from": 2010,
+      "set": { "start_stop": true, "bms_registration": true, "rear_brake_type": "disc", "wear_sensor": true }
+    },
+    {
+      "make": "Ford",
+      "models": ["Fiesta", "Ka", "Ka+"],
+      "year_from": 2008,
+      "set": { "epb": false, "rear_brake_type": "drum", "rear_piston_type": "none" }
+    },
+    {
+      "make": "Ford",
+      "models": ["Focus", "Mondeo", "Kuga"],
+      "year_from": 2011,
+      "set": { "epb": true, "rear_brake_type": "disc", "start_stop": true }
+    },
+    {
+      "make": "Vauxhall",
+      "models": ["Corsa"],
+      "year_from": 2006,
+      "set": { "epb": false, "rear_brake_type": "drum", "rear_piston_type": "none" }
+    },
+    {
+      "make": "Vauxhall",
+      "models": ["Astra", "Insignia"],
+      "year_from": 2009,
+      "set": { "epb": false, "rear_brake_type": "disc", "rear_piston_type": "screw" }
+    },
+    {
+      "make": "Alfa Romeo",
+      "models": ["Mito"],
+      "year_from": 2008,
+      "year_to": 2018,
+      "set": { "epb": false, "rear_brake_type": "drum", "rear_piston_type": "none", "start_stop": true, "bms_registration": false, "has_dipstick": true, "wear_sensor": true, "battery_location": "under_bonnet" }
+    },
+    {
+      "make": "Toyota",
+      "models": ["Yaris", "Aygo"],
+      "year_from": 2005,
+      "set": { "epb": false, "rear_brake_type": "drum", "rear_piston_type": "none" }
+    },
+    {
+      "make": "Nissan",
+      "models": ["Qashqai"],
+      "year_from": 2007,
+      "set": { "epb": false, "rear_brake_type": "disc", "rear_piston_type": "screw", "start_stop": true }
+    },
+    {
+      "make": "Tesla",
+      "set": { "epb": true, "rear_brake_type": "disc", "has_dipstick": false, "battery_location": "under_bonnet" }
+    }
+  ]
+}

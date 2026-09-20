@@ -1,0 +1,214 @@
+{
+  "_comment": "Layer 2. Conditional edits applied to a generic guide once we know something about the car. Keyed on vehicle ATTRIBUTES, not on make/model, so a few dozen rules cover the whole fleet. Conditions in 'when' are ANDed. Operators: equals, not_equals, in, not_in, gte, lte.",
+  "rules": [
+    {
+      "id": "rear-epb-service-mode",
+      "applies_to": ["brake-pads"],
+      "when": [
+        { "attr": "axle", "equals": "rear" },
+        { "attr": "epb", "equals": true }
+      ],
+      "effects": [
+        {
+          "type": "add_warning",
+          "severity": "critical",
+          "text": "This car has an electric parking brake on the rear axle. The caliper motor must be put into service mode with a scan tool before you touch it. Forcing the piston back against a live actuator strips the motor gearbox — a several-hundred-pound caliper, not a £40 pad set."
+        },
+        {
+          "type": "add_tool",
+          "tool": { "name": "Scan tool with EPB service/maintenance mode", "essential": true }
+        },
+        {
+          "type": "insert_step",
+          "after": "wheel-off",
+          "step": {
+            "id": "epb-service-mode",
+            "title": "Put the electric parking brake into service mode",
+            "detail": "Ignition on, engine off, parking brake released. Use the scan tool's EPB service or maintenance function to wind the actuators fully back. You should hear each motor run.",
+            "warning": "Do not open a door or press the parking brake switch while service mode is active on cars that exit the mode automatically."
+          }
+        },
+        {
+          "type": "insert_step",
+          "before": "bed-in",
+          "step": {
+            "id": "epb-exit-mode",
+            "title": "Exit service mode and re-apply the parking brake",
+            "detail": "Close service mode with the scan tool, then cycle the parking brake switch on and off a few times so the actuators re-learn their end stops. Confirm the dashboard warning light has gone out.",
+            "warning": "Do not drive the car while the EPB warning light is lit."
+          }
+        }
+      ]
+    },
+    {
+      "id": "rear-epb-unknown",
+      "applies_to": ["brake-pads"],
+      "when": [
+        { "attr": "axle", "equals": "rear" },
+        { "attr": "epb", "equals": "unknown" }
+      ],
+      "effects": [
+        {
+          "type": "add_warning",
+          "severity": "high",
+          "text": "We do not have electric parking brake data on file for this car. Check before you start: if the parking brake is a button or switch on the centre console rather than a lever, it is electric and needs a scan tool to retract the rear pistons safely."
+        }
+      ]
+    },
+    {
+      "id": "rear-screw-in-piston",
+      "applies_to": ["brake-pads"],
+      "when": [
+        { "attr": "axle", "equals": "rear" },
+        { "attr": "rear_piston_type", "equals": "screw" }
+      ],
+      "effects": [
+        {
+          "type": "add_tool",
+          "tool": { "name": "Brake piston wind-back tool", "essential": true }
+        },
+        {
+          "type": "replace_step",
+          "step_id": "retract",
+          "step": {
+            "id": "retract",
+            "title": "Wind the piston back — do not push it",
+            "detail": "This rear caliper has a threaded piston driven by the handbrake mechanism. It must be rotated clockwise as it is pressed in, using a wind-back tool with the correct pin adaptor.",
+            "warning": "Pushing a screw-in piston straight back tears the mechanism and the seal. If it resists, you are turning it the wrong way — a few are left-hand threaded."
+          }
+        }
+      ]
+    },
+    {
+      "id": "rear-piston-type-unknown",
+      "applies_to": ["brake-pads"],
+      "when": [
+        { "attr": "axle", "equals": "rear" },
+        { "attr": "rear_piston_type", "equals": "unknown" },
+        { "attr": "epb", "not_equals": true }
+      ],
+      "effects": [
+        {
+          "type": "add_warning",
+          "severity": "medium",
+          "text": "Rear caliper piston type not on file. Many rear calipers with a cable handbrake use a screw-in piston that has to be wound back, not pressed. Try gentle pressure first: if it does not move easily, stop and use a wind-back tool."
+        }
+      ]
+    },
+    {
+      "id": "rear-drums",
+      "applies_to": ["brake-pads"],
+      "when": [
+        { "attr": "axle", "equals": "rear" },
+        { "attr": "rear_brake_type", "equals": "drum" }
+      ],
+      "effects": [
+        {
+          "type": "add_warning",
+          "severity": "critical",
+          "text": "This car has drum brakes on the rear axle, not discs. This guide does not apply — rear shoes are a different job with springs under tension and are best done one side at a time so you have the other to copy."
+        }
+      ]
+    },
+    {
+      "id": "axle-unspecified",
+      "applies_to": ["brake-pads"],
+      "when": [{ "attr": "axle", "equals": "unspecified" }],
+      "effects": [
+        {
+          "type": "add_warning",
+          "severity": "medium",
+          "text": "These are the front-axle steps. Rear calipers differ significantly — many need a wind-back tool or a scan tool. Request this guide with axle=rear for the rear-specific version."
+        }
+      ]
+    },
+    {
+      "id": "brake-wear-sensor",
+      "applies_to": ["brake-pads"],
+      "when": [{ "attr": "wear_sensor", "equals": true }],
+      "effects": [
+        {
+          "type": "add_part",
+          "part": { "name": "Brake pad wear sensor", "note": "Single-use once the wire has been cut through by the disc. Cheap, and the dashboard light will not clear without it." }
+        }
+      ]
+    },
+    {
+      "id": "diesel-dpf-oil",
+      "applies_to": ["engine-oil-and-filter"],
+      "when": [
+        { "attr": "fuel", "equals": "diesel" },
+        { "attr": "dpf", "equals": true }
+      ],
+      "effects": [
+        {
+          "type": "add_warning",
+          "severity": "high",
+          "text": "This car has a diesel particulate filter, so it needs low-SAPS oil (an ACEA C-grade such as C2 or C3). Ordinary high-ash oil leaves deposits that block the DPF permanently — a replacement is four figures."
+        }
+      ]
+    },
+    {
+      "id": "no-dipstick",
+      "applies_to": ["engine-oil-and-filter"],
+      "when": [{ "attr": "has_dipstick", "equals": false }],
+      "effects": [
+        {
+          "type": "replace_step",
+          "step_id": "check",
+          "step": {
+            "id": "check",
+            "title": "Check the level electronically",
+            "detail": "This engine has no dipstick. Lower the car level, run the engine to operating temperature, switch off, wait the interval the car asks for (usually 5–10 minutes), then read the level through the instrument cluster menu. Adjust and re-read.",
+            "warning": "Overfilling is as damaging as underfilling — it aerates the oil and can push out seals. Add in 0.25 litre steps and re-measure."
+          }
+        }
+      ]
+    },
+    {
+      "id": "start-stop-battery",
+      "applies_to": ["battery"],
+      "when": [{ "attr": "start_stop", "equals": true }],
+      "effects": [
+        {
+          "type": "add_warning",
+          "severity": "high",
+          "text": "This car has stop-start, so it needs an AGM or EFB battery rather than a standard flooded one. A standard battery will work for a few months and then fail early under the repeated deep cycling."
+        }
+      ]
+    },
+    {
+      "id": "bms-registration",
+      "applies_to": ["battery"],
+      "when": [{ "attr": "bms_registration", "equals": true }],
+      "effects": [
+        {
+          "type": "add_tool",
+          "tool": { "name": "Scan tool with battery registration function", "essential": true }
+        },
+        {
+          "type": "insert_step",
+          "before": "recycle",
+          "step": {
+            "id": "register",
+            "title": "Register the new battery with the charging system",
+            "detail": "Tell the battery management system a new battery is fitted, along with its type and capacity. Until you do, the car keeps charging to the old battery's aged profile.",
+            "warning": "Skipping this undercharges the new battery and shortens its life considerably — and on some cars leaves stop-start permanently disabled."
+          }
+        }
+      ]
+    },
+    {
+      "id": "battery-not-under-bonnet",
+      "applies_to": ["battery"],
+      "when": [{ "attr": "battery_location", "in": ["boot", "under_seat", "under_floor"] }],
+      "effects": [
+        {
+          "type": "add_warning",
+          "severity": "low",
+          "text": "The battery on this car is not under the bonnet. Check the location before you start — there is usually a jump-start post under the bonnet that is not the battery itself."
+        }
+      ]
+    }
+  ]
+}

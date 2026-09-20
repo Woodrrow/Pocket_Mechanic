@@ -1,0 +1,119 @@
+{
+  "id": "battery",
+  "title": "Replace the 12 V battery",
+  "category": "electrical",
+  "mot_clusters": [
+    "electrical"
+  ],
+  "summary": "Disconnect, swap and reconnect the starter battery in the right order.",
+  "difficulty": "beginner",
+  "estimated_minutes": 30,
+  "interval": "Typically four to six years. Slow cranking on a cold morning is the usual first symptom.",
+  "safety": [
+    "A car battery can deliver hundreds of amps into a dropped spanner. Remove watches and rings, and never let a tool bridge both terminals.",
+    "Batteries vent hydrogen. No smoking, no sparks, no flames nearby.",
+    "The electrolyte is sulphuric acid. If the case is cracked or bulging, wear eye protection and gloves."
+  ],
+  "tools": [
+    {
+      "name": "Spanner or socket set (usually 10 mm and 13 mm)",
+      "essential": true
+    },
+    {
+      "name": "Terminal brush or wire brush",
+      "essential": false
+    },
+    {
+      "name": "Memory saver",
+      "essential": false,
+      "note": "Keeps radio codes, window calibration and stored settings alive while the battery is out."
+    }
+  ],
+  "parts": [
+    {
+      "name": "12 V battery",
+      "spec_key": "battery_size_code"
+    }
+  ],
+  "specs": [
+    {
+      "key": "battery_size_code",
+      "label": "Battery size code",
+      "unit": null
+    },
+    {
+      "key": "battery_capacity_ah",
+      "label": "Capacity",
+      "unit": "Ah"
+    },
+    {
+      "key": "battery_cca",
+      "label": "Cold cranking amps",
+      "unit": "A"
+    },
+    {
+      "key": "battery_clamp_torque_nm",
+      "label": "Hold-down clamp torque",
+      "unit": "Nm"
+    }
+  ],
+  "steps": [
+    {
+      "id": "notes",
+      "title": "Note anything the car will forget",
+      "detail": "Radio code, seat and mirror presets, clock. Some cars need the electric windows re-calibrated afterwards (hold the switch up for a few seconds at the top of travel)."
+    },
+    {
+      "id": "off",
+      "title": "Everything off",
+      "detail": "Ignition off, key out, doors closed, bonnet light disconnected if it is the type that stays on. Wait a minute for modules to go to sleep."
+    },
+    {
+      "id": "locate",
+      "title": "Find the battery",
+      "detail": "Usually under the bonnet, but plenty of cars put it in the boot, under the floor or under a front seat."
+    },
+    {
+      "id": "neg",
+      "title": "Disconnect the negative terminal FIRST",
+      "detail": "Marked with a minus and usually a black cover. Slacken the clamp, twist it off and tuck it aside where it cannot spring back.",
+      "warning": "Negative first, always. If you start on the positive and your spanner touches bodywork, you short the battery through the tool."
+    },
+    {
+      "id": "pos",
+      "title": "Disconnect the positive terminal",
+      "detail": "Slacken, remove, and put the insulating cover back over the terminal so nothing can touch it."
+    },
+    {
+      "id": "clamp",
+      "title": "Undo the hold-down clamp and lift the battery out",
+      "detail": "A long bolt at the base or a bar across the top. Batteries are heavier than they look — lift with your legs and keep it level."
+    },
+    {
+      "id": "clean",
+      "title": "Clean the tray and terminals",
+      "detail": "Wire-brush any white or green corrosion off the clamps. Clean, bright metal makes the difference between a good connection and a mysterious no-start."
+    },
+    {
+      "id": "in",
+      "title": "Fit the new battery and secure it",
+      "detail": "Same orientation — check the terminals reach their cables before you tighten anything. Refit the hold-down clamp; an unsecured battery is an MOT failure.",
+      "warning": "A loose battery can tip, short against the bonnet, or crack its case."
+    },
+    {
+      "id": "reconnect",
+      "title": "Reconnect positive FIRST, then negative",
+      "detail": "Exactly the reverse of removal. Tighten enough that the clamp cannot be twisted by hand, no more — the lead posts are soft."
+    },
+    {
+      "id": "test",
+      "title": "Start up and check",
+      "detail": "It should crank strongly. With the engine running, charging voltage at the terminals should sit around 13.5–14.8 V. Re-enter the radio code and reset the clock."
+    },
+    {
+      "id": "recycle",
+      "title": "Recycle the old battery",
+      "detail": "Any recycling centre or motor factor will take it, and many pay a small scrap value. Never put it in a household bin."
+    }
+  ]
+}

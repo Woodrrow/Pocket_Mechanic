@@ -1,0 +1,27 @@
+{
+  "_comment": "Layer 3. The genuinely per-car numbers. Torque figures and part numbers are proprietary data, so this file is deliberately sparse and hand-seeded — anything missing renders as 'not on file' rather than a guess. Matching is the same make/model/year-range scheme as vehicle_traits.json.",
+  "specs": [
+    {
+      "make": "Alfa Romeo",
+      "models": ["Mito"],
+      "year_from": 2008,
+      "year_to": 2018,
+      "source": "hand-seeded example — verify against a workshop manual before use",
+      "jobs": {
+        "brake-pads": {
+          "min_pad_thickness_mm": 3,
+          "wheel_nut_torque_nm": 98
+        },
+        "engine-oil-and-filter": {
+          "oil_grade": "5W-40 ACEA A3/B4",
+          "oil_capacity_litres": 4.0,
+          "sump_plug_torque_nm": 30
+        },
+        "battery": {
+          "battery_size_code": "027 / L2",
+          "battery_capacity_ah": 60
+        }
+      }
+    }
+  ]
+}

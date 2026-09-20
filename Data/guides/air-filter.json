@@ -1,0 +1,67 @@
+{
+  "id": "air-filter",
+  "title": "Replace the engine air filter",
+  "category": "servicing",
+  "mot_clusters": [],
+  "summary": "Swap the paper element that filters intake air. One of the easiest jobs on any car.",
+  "difficulty": "beginner",
+  "estimated_minutes": 15,
+  "interval": "Typically every 20,000 miles or two years. Sooner if you drive on dusty or rural roads.",
+  "safety": [
+    "Engine off and cool. Nothing here needs the engine running.",
+    "Do not drop anything into an open intake. Anything that goes down there gets eaten."
+  ],
+  "tools": [
+    {
+      "name": "Screwdriver or socket set",
+      "essential": false,
+      "note": "Many airboxes are clip-only and need no tools at all."
+    }
+  ],
+  "parts": [
+    {
+      "name": "Engine air filter element",
+      "spec_key": "air_filter_part_number"
+    }
+  ],
+  "specs": [
+    {
+      "key": "air_filter_part_number",
+      "label": "Air filter part number",
+      "unit": null
+    }
+  ],
+  "steps": [
+    {
+      "id": "locate",
+      "title": "Find the airbox",
+      "detail": "A large black plastic box, usually near a corner of the engine bay, with a thick trunking hose running out of it towards the engine."
+    },
+    {
+      "id": "open",
+      "title": "Release the lid",
+      "detail": "Undo the spring clips and any screws. Leave the intake trunking attached if you can — just flex the lid up."
+    },
+    {
+      "id": "note",
+      "title": "Note how the old filter sits",
+      "detail": "Look for an airflow arrow or a rubber seal that faces a particular way. Photograph it before you lift it out."
+    },
+    {
+      "id": "swap",
+      "title": "Remove the old element and wipe out the box",
+      "detail": "Leaves and grit collect in the bottom. Wipe it out with a damp cloth — do not wash the box out with the trunking connected.",
+      "warning": "Do not let debris fall into the outlet side of the box. That side leads straight to the engine."
+    },
+    {
+      "id": "fit",
+      "title": "Fit the new element",
+      "detail": "Seal seated fully all the way round. If the lid does not close without force, the filter is in wrong."
+    },
+    {
+      "id": "close",
+      "title": "Close and secure the lid",
+      "detail": "All clips latched and all screws in. An unsealed airbox draws in unfiltered air and can upset the airflow sensor."
+    }
+  ]
+}

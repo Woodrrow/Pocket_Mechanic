@@ -1,0 +1,142 @@
+{
+  "id": "engine-oil-and-filter",
+  "title": "Change the engine oil and filter",
+  "category": "servicing",
+  "mot_clusters": [],
+  "summary": "Drain the old oil, fit a new filter, refill with the correct grade and quantity.",
+  "difficulty": "beginner",
+  "estimated_minutes": 60,
+  "interval": "Typically every 10,000–12,000 miles or 12 months, whichever comes first. Long-life schedules can run longer but punish short-journey cars.",
+  "safety": [
+    "Warm oil drains better but hot oil scalds. Run the engine a few minutes, then let it stand for at least ten.",
+    "Never work under a car supported only by a jack.",
+    "Used oil is a carcinogen and a pollutant. Wear gloves and take it to a recycling centre — pouring it down a drain is a criminal offence in the UK."
+  ],
+  "tools": [
+    {
+      "name": "Trolley jack and axle stands, or ramps",
+      "essential": true
+    },
+    {
+      "name": "Oil drain pan (larger than the sump capacity)",
+      "essential": true
+    },
+    {
+      "name": "Socket or hex key for the sump plug",
+      "essential": true
+    },
+    {
+      "name": "Oil filter wrench or cap socket",
+      "essential": true
+    },
+    {
+      "name": "Torque wrench",
+      "essential": true
+    },
+    {
+      "name": "Funnel",
+      "essential": false
+    },
+    {
+      "name": "Nitrile gloves",
+      "essential": false
+    }
+  ],
+  "parts": [
+    {
+      "name": "Engine oil",
+      "spec_key": "oil_grade"
+    },
+    {
+      "name": "Oil filter",
+      "spec_key": "oil_filter_part_number"
+    },
+    {
+      "name": "Sump plug sealing washer",
+      "spec_key": null,
+      "note": "Single-use on most cars. A weeping sump plug is almost always a reused washer."
+    }
+  ],
+  "specs": [
+    {
+      "key": "oil_grade",
+      "label": "Oil grade and specification",
+      "unit": null
+    },
+    {
+      "key": "oil_capacity_litres",
+      "label": "Capacity with filter",
+      "unit": "litres"
+    },
+    {
+      "key": "oil_filter_part_number",
+      "label": "Oil filter part number",
+      "unit": null
+    },
+    {
+      "key": "sump_plug_torque_nm",
+      "label": "Sump plug torque",
+      "unit": "Nm"
+    }
+  ],
+  "steps": [
+    {
+      "id": "warm",
+      "title": "Warm the engine, then let it stand",
+      "detail": "Five minutes of running thins the oil so it carries more of the sediment out. Then switch off and wait ten minutes before going underneath."
+    },
+    {
+      "id": "lift",
+      "title": "Raise and support the front of the car",
+      "detail": "Axle stands or ramps on level ground. The car needs to be level when you check the level later, so note how you will lower it."
+    },
+    {
+      "id": "undertray",
+      "title": "Remove the undertray if fitted",
+      "detail": "Usually a handful of 8/10 mm bolts and plastic turn-clips. Keep the fasteners together — they are easy to lose and annoying to source."
+    },
+    {
+      "id": "drain",
+      "title": "Drain the oil",
+      "detail": "Pan underneath and slightly offset — the first flow shoots sideways. Crack the sump plug, then undo it by hand and pull it clear quickly.",
+      "warning": "Do not overtighten the plug on reassembly. Sump threads are soft and stripping one turns a £30 service into a new sump."
+    },
+    {
+      "id": "filter-off",
+      "title": "Remove the old filter",
+      "detail": "Canister type: unscrew with a filter wrench, it will be full of oil. Cartridge type: undo the plastic housing cap, lift out the paper element and replace the O-rings supplied in the kit."
+    },
+    {
+      "id": "plug-in",
+      "title": "Refit the sump plug with a new washer",
+      "detail": "Clean the sealing face, fit the new washer, torque to spec."
+    },
+    {
+      "id": "filter-on",
+      "title": "Fit the new filter",
+      "detail": "Smear clean oil on the rubber seal before fitting. Canister: hand-tight, then three-quarters of a turn. Cartridge: torque the cap to spec.",
+      "warning": "A dry seal grabs and tears, and an overtightened filter is near-impossible to remove next time."
+    },
+    {
+      "id": "refill",
+      "title": "Refill through the filler cap",
+      "detail": "Put in slightly less than the stated capacity, then work up to the mark. It is far easier to add oil than to remove it."
+    },
+    {
+      "id": "check",
+      "title": "Check level, run, re-check",
+      "detail": "Lower the car level, check the dipstick. Start the engine — the oil light should go out within a couple of seconds. Look underneath for leaks at the plug and filter, stop, wait a few minutes, and re-check the level.",
+      "warning": "If the oil pressure light stays on, switch off immediately and find out why before running it again."
+    },
+    {
+      "id": "reset",
+      "title": "Reset the service indicator",
+      "detail": "Many cars have a button sequence to reset the counter; some need a scan tool. Skipping this only affects the reminder, not the engine."
+    },
+    {
+      "id": "dispose",
+      "title": "Take the old oil and filter to a recycling centre",
+      "detail": "Most UK household waste sites take engine oil free of charge. Seal it in the container the new oil came in."
+    }
+  ]
+}
