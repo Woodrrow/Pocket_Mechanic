@@ -6,10 +6,12 @@ Three layers, deliberately kept separate:
   2. Data/guide_rules.json   conditional edits keyed on vehicle ATTRIBUTES
   3. Data/vehicle_specs.json the per-car numbers (torque, part numbers)
 
-Layers 2 and 3 are additive. A car we know nothing about still gets a usable
-guide; it just carries more "not on file" and more "check before you start".
-An attribute we cannot establish resolves to "unknown", never to a guess,
-because a wrong "no electric parking brake" wrecks a caliper.
+Layers 2 and 3 are additive and BOTH LOOKUP FILES ARE OPTIONAL. Without them
+every trait resolves to "unknown" and every spec renders as "not on file",
+which is the correct and safe output: a guide that says "check whether your
+car has an electric parking brake" is useful, while a guide that guesses
+wrong wrecks a caliper. Populate them only with figures verified against a
+workshop manual. See the README for the schema each file expects.
 """
 
 import copy
@@ -74,16 +76,23 @@ def _rules() -> list[dict]:
     return _cache["rules"]
 
 
+def _optional_list(path: Path, key: str, cache_key: str) -> list[dict]:
+    """Load a lookup table, treating absence as empty rather than an error.
+
+    No file means no verified data, which resolves to "unknown" downstream.
+    That is a supported state, not a broken install.
+    """
+    if cache_key not in _cache:
+        _cache[cache_key] = _load_json(path)[key] if path.exists() else []
+    return _cache[cache_key]
+
+
 def _traits() -> list[dict]:
-    if "traits" not in _cache:
-        _cache["traits"] = _load_json(TRAITS_FILE)["traits"]
-    return _cache["traits"]
+    return _optional_list(TRAITS_FILE, "traits", "traits")
 
 
 def _specs() -> list[dict]:
-    if "specs" not in _cache:
-        _cache["specs"] = _load_json(SPECS_FILE)["specs"]
-    return _cache["specs"]
+    return _optional_list(SPECS_FILE, "specs", "specs")
 
 
 def reload_data() -> None:
